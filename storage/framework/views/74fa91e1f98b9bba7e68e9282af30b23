@@ -1,0 +1,53 @@
+<?php $__env->startSection('title'); ?>
+Events
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('top'); ?>
+<div class="page-header">
+<h1>Events</h1>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="row">
+    <div class="col-xs-8">
+        <p class="lead">
+            <?php if(count($events) == 0): ?>
+                There are currently no events.
+            <?php else: ?>
+                Here you may find our events:
+            <?php endif; ?>
+        </p>
+    </div>
+    <?php if (\GrahamCampbell\Credentials\Facades\Credentials::check() && \GrahamCampbell\Credentials\Facades\Credentials::hasAccess('edit')): ?>
+        <div class="col-xs-4">
+            <div class="pull-right">
+                <a class="btn btn-primary" href="<?php echo URL::route('events.create'); ?>"><i class="fa fa-calendar"></i> New Event</a>
+            </div>
+        </div>
+    <?php endif; ?>
+</div>
+<?php foreach($events as $event): ?>
+    <h2><?php echo $event->title; ?></h2>
+    <p>
+        <strong><?php echo $event->date->format('l jS F Y H:i'); ?></strong>
+    </p>
+    <p>
+        <a class="btn btn-success" href="<?php echo URL::route('events.show', array('events' => $event->id)); ?>"><i class="fa fa-file-text"></i> Show Event</a>
+        <?php if (\GrahamCampbell\Credentials\Facades\Credentials::check() && \GrahamCampbell\Credentials\Facades\Credentials::hasAccess('edit')): ?>
+             <a class="btn btn-info" href="<?php echo URL::route('events.edit', array('events' => $event->id)); ?>"><i class="fa fa-pencil-square-o"></i> Edit Event</a> <a class="btn btn-danger" href="#delete_event_<?php echo $event->id; ?>" data-toggle="modal" data-target="#delete_event_<?php echo $event->id; ?>"><i class="fa fa-times"></i> Delete Event</a>
+        <?php endif; ?>
+    </p>
+    <br>
+<?php endforeach; ?>
+<?php echo $links; ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('bottom'); ?>
+<?php if (\GrahamCampbell\Credentials\Facades\Credentials::check() && \GrahamCampbell\Credentials\Facades\Credentials::hasAccess('edit')): ?>
+    <?php echo $__env->make('events.deletes', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make(Config::get('core.default'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

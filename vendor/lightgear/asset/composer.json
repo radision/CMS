@@ -1,0 +1,26 @@
+{
+    "name": "lightgear/asset",
+    "description": "Easy asset Management for Laravel",
+    "authors": [
+        {
+            "name": "Donato Rotunno",
+            "email": "ralf57@gmail.com"
+        },
+        {
+            "name": "Graham Campbell",
+            "email": "graham@mineuk.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.7",
+        "illuminate/console": "5.0.*",
+        "illuminate/contracts": "5.0.*",
+        "illuminate/support": "5.0.*",
+        "mrclay/minify": "~2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lightgear\\Asset\\": "src/"
+        }
+    }
+}
