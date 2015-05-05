@@ -6,7 +6,7 @@ Create Event
 
 @section('top')
 <div class="page-header">
-<h1>Create Event</h1>
+<h1>新的事件</h1>
 </div>
 @stop
 

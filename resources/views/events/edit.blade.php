@@ -6,7 +6,7 @@ Edit {{ $event->title }}
 
 @section('top')
 <div class="page-header">
-<h1>Edit {{ $event->title }}</h1>
+<h1>修改 {{ $event->title }}</h1>
 </div>
 @stop
 
@@ -14,12 +14,12 @@ Edit {{ $event->title }}
 <div class="row">
     <div class="col-xs-6">
         <p class="lead">
-            Please edit the event:
+            修改事件:
         </p>
     </div>
     <div class="col-xs-6">
         <div class="pull-right">
-            <a class="btn btn-success" href="{!! URL::route('events.show', array('events' => $event->id)) !!}"><i class="fa fa-file-text"></i> Show Event</a> <a class="btn btn-danger" href="#delete_event" data-toggle="modal" data-target="#delete_event"><i class="fa fa-times"></i> Delete Event</a>
+            <a class="btn btn-success" href="{!! URL::route('events.show', array('events' => $event->id)) !!}"><i class="fa fa-file-text"></i> 查看</a> <a class="btn btn-danger" href="#delete_event" data-toggle="modal" data-target="#delete_event"><i class="fa fa-times"></i> 删除</a>
         </div>
         </div>
 </div>

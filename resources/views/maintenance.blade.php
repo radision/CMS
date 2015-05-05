@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Site Maintenance</title>
+<title>维护中，请耐心等待！</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Site Maintenance">
 <meta name="author" content="{{ Config::get('cms.author') }}">
@@ -18,15 +18,13 @@
 </head>
 <body>
 <article>
-    <h1>We'll be back soon!</h1>
+    <h1>我们正全力修复中......</h1>
     <div>
         <p>
-            Sorry for the inconvenience, but we're performing some maintenance at
-            the moment. Most site maintenance takes under 5 minutes, so you can
-            expect us to be back online shortly!
+非常报歉地告诉您，请您耐心地等待一段时间，我们正集中所有力量进行故障的修复～
         </p>
         <p>
-            — The Web Team
+            — 开发团队
         </p>
     </div>
 </article>
