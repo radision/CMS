@@ -1,12 +1,12 @@
 @extends(Config::get('core.default'))
 
 @section('title')
-Edit {{ $post->title }}
+修改 {{ $post->title }}
 @stop
 
 @section('top')
 <div class="page-header">
-<h1>Edit {{ $post->title }}</h1>
+<h1>修改 {{ $post->title }}</h1>
 </div>
 @stop
 
@@ -14,12 +14,12 @@ Edit {{ $post->title }}
 <div class="row">
     <div class="col-xs-6">
         <p class="lead">
-            Please edit the post:
+            修改文章内容:
         </p>
     </div>
     <div class="col-xs-6">
         <div class="pull-right">
-            <a class="btn btn-success" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}"><i class="fa fa-file-text"></i> Show Post</a> <a class="btn btn-danger" href="#delete_post" data-toggle="modal" data-target="#delete_post"><i class="fa fa-times"></i> Delete Post</a>
+            <a class="btn btn-success" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}"><i class="fa fa-file-text"></i> 查看</a> <a class="btn btn-danger" href="#delete_post" data-toggle="modal" data-target="#delete_post"><i class="fa fa-times"></i> 删除</a>
         </div>
     </div>
 </div>

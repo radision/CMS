@@ -16,17 +16,17 @@
         <div class="hidden-xs">
             <div class="col-xs-6">
                 <p>
-                    <strong>Post Owner:</strong> {!! $post->owner !!}
+                    <strong>创建者:</strong> {!! $post->owner !!}
                 </p>
-                <a class="btn btn-info" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}"><i class="fa fa-pencil-square-o"></i> Edit Post</a> <a class="btn btn-danger" href="#delete_post" data-toggle="modal" data-target="#delete_post"><i class="fa fa-times"></i> Delete Post</a>
+                <a class="btn btn-info" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}"><i class="fa fa-pencil-square-o"></i> 修改</a> <a class="btn btn-danger" href="#delete_post" data-toggle="modal" data-target="#delete_post"><i class="fa fa-times"></i> 删除</a>
             </div>
             <div class="col-xs-6">
                 <div class="pull-right">
                     <p>
-                        <em>Post Created: {!! HTML::ago($post->created_at) !!}</em>
+                        <em>创建于: {!! HTML::ago($post->created_at) !!}</em>
                     </p>
                     <p>
-                        <em>Last Updated: {!! HTML::ago($post->updated_at) !!}</em>
+                        <em>更新于: {!! HTML::ago($post->updated_at) !!}</em>
                     </p>
                 </div>
             </div>
@@ -34,15 +34,15 @@
         <div class="visible-xs">
             <div class="col-xs-12">
                 <p>
-                    <strong>Post Owner:</strong> {!! $post->owner !!}
+                    <strong>创建者:</strong> {!! $post->owner !!}
                 </p>
                 <p>
-                    <strong>Post Created:</strong> {!! HTML::ago($post->created_at) !!}
+                    <strong>创建于:</strong> {!! HTML::ago($post->created_at) !!}
                 </p>
                 <p>
-                    <strong>Last Updated:</strong> {!! HTML::ago($post->updated_at) !!}
+                    <strong>更新于:</strong> {!! HTML::ago($post->updated_at) !!}
                 </p>
-                <a class="btn btn-info" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}"><i class="fa fa-pencil-square-o"></i> Edit Post</a> <a class="btn btn-danger" href="#delete_post" data-toggle="modal" data-target="#delete_post"><i class="fa fa-times"></i> Delete Post</a>
+                <a class="btn btn-info" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}"><i class="fa fa-pencil-square-o"></i> 修改</a> <a class="btn btn-danger" href="#delete_post" data-toggle="modal" data-target="#delete_post"><i class="fa fa-times"></i> 删除</a>
             </div>
         </div>
     </div>
@@ -56,14 +56,14 @@
         </div>
         <div class="col-md-4 col-xs-6">
             <div class="pull-right">
-                <p>Author: {!! $post->author !!}</p>
+                <p>作者: {!! $post->author !!}</p>
             </div>
         </div>
     </div>
     <div class="visible-xs">
         <div class="col-xs-12">
             <p class="lead">{!! $post->summary !!}</p>
-            <p>Author: {!! $post->author !!}</p>
+            <p>作者: {!! $post->author !!}</p>
         </div>
     </div>
 </div>

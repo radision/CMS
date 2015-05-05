@@ -1,12 +1,12 @@
 @extends(Config::get('core.default'))
 
 @section('title')
-Blog
+文章列表
 @stop
 
 @section('top')
 <div class="page-header">
-<h1>Blog</h1>
+<h1>文章列表</h1>
 </div>
 @stop
 
@@ -15,16 +15,16 @@ Blog
     <div class="col-xs-8">
         <p class="lead">
             @if (count($posts) == 0)
-                There are currently no blog posts.
+                无文章
             @else
-                Here you may find our blog posts:
+                查找文章
             @endif
         </p>
     </div>
     @auth('blog')
         <div class="col-xs-4">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> New Post</a>
+                <a class="btn btn-primary" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> 新文章</a>
             </div>
         </div>
     @endauth
@@ -35,9 +35,9 @@ Blog
         <strong>{!! $post->summary !!}</strong>
     </p>
     <p>
-        <a class="btn btn-success" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}"><i class="fa fa-file-text"></i> Show Post</a>
+        <a class="btn btn-success" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}"><i class="fa fa-file-text"></i> 查看</a>
         @auth('blog')
-             <a class="btn btn-info" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}"><i class="fa fa-pencil-square-o"></i> Edit Post</a> <a class="btn btn-danger" href="#delete_post_{!! $post->id !!}" data-toggle="modal" data-target="#delete_post_{!! $post->id !!}"><i class="fa fa-times"></i> Delete Post</a>
+             <a class="btn btn-info" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}"><i class="fa fa-pencil-square-o"></i> 修改</a> <a class="btn btn-danger" href="#delete_post_{!! $post->id !!}" data-toggle="modal" data-target="#delete_post_{!! $post->id !!}"><i class="fa fa-times"></i> 删除</a>
         @endauth
     </p>
     <br>

@@ -1,12 +1,12 @@
 @extends(Config::get('core.default'))
 
 @section('title')
-Create Post
+新文章
 @stop
 
 @section('top')
 <div class="page-header">
-<h1>Create Post</h1>
+<h1>新文章</h1>
 </div>
 @stop
 
