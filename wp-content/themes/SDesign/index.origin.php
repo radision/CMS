@@ -2,7 +2,6 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
-			<div class="img-div"><a href="/p=7"><img src="/upload/11.jpg"></a></div>
 			<div id="carousel-example-generic" class="carousel slide mb-10" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#carousel-example-generic" data-slide-to="0" class="active">
@@ -148,6 +147,80 @@
 			<div id="home-grid-two-right">
 				<div class="img-div">
 					<a href="<?php echo get_option('mao10_adlnk_1'); ?>"><img src="<?php echo get_option('mao10_adimg_1'); ?>"></a>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-sm-4 mb-10">
+			<div id="home-grid-three-left" class="home-grid-three">
+				<div class="img-div">
+					<?php query_posts('showposts=1&cat='.get_option('mao10_homearc_2')); ?>
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<a href="<?php the_permalink(); ?>"><img src="<?php echo img(); ?>"></a>
+					<?php endwhile; endif; wp_reset_query(); ?>
+				</div>
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-heading">
+						<?php echo get_cat_name(get_option('mao10_homearc_2')) ?>
+					</div>
+					<!-- List group -->
+					<ul class="list-group">
+						<?php query_posts('showposts=5&cat='.get_option('mao10_homearc_2')); ?>
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<a class="list-group-item" href="<?php the_permalink(); ?>">
+							<?php the_title(); ?>
+						</a>
+						<?php endwhile; endif; wp_reset_query(); ?>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4 mb-10">
+			<div id="home-grid-three-center" class="home-grid-three">
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-heading">
+						<?php echo get_cat_name(get_option('mao10_homearc_3')) ?>
+					</div>
+					<!-- List group -->
+					<ul class="list-group">
+						<?php query_posts('showposts=10&cat='.get_option('mao10_homearc_3')); ?>
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php $arcnum3++; if($arcnum3==6) echo '<hr>'; ?>
+						<a class="list-group-item" href="<?php the_permalink(); ?>">
+							<?php the_title(); ?>
+						</a>
+						<?php endwhile; endif; wp_reset_query(); ?>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4 mb-10">
+			<div id="home-grid-three-right" class="home-grid-three">
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-heading">
+						<?php echo get_cat_name(get_option('mao10_homearc_4')) ?>
+					</div>
+					<div class="panel-body">
+						<?php query_posts('showposts=2&cat='.get_option('mao10_homearc_4')); ?>
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php $arcnum4++; ?>
+						<div class="img-div <?php if($arcnum4==1) echo 'mb-10'; ?>">
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo img(); ?>"></a>
+						</div>
+						<?php endwhile; endif; wp_reset_query(); ?>
+					</div>
+					<!-- List group -->
+					<ul class="list-group">
+						<?php query_posts('offset=2&showposts=5&cat='.get_option('mao10_homearc_4')); ?>
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<a class="list-group-item" href="<?php the_permalink(); ?>">
+							<?php the_title(); ?>
+						</a>
+						<?php endwhile; endif; wp_reset_query(); ?>
+					</ul>
 				</div>
 			</div>
 		</div>
